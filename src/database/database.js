@@ -1,5 +1,6 @@
-import { Sequelize } from "sequelize";
+import Sequelize from "sequelize";
 
-const sequelize = new Sequelize({
-    
-})
+export const sequelize = new Sequelize('pokemon_db', 'postgres', '12345678', {
+    host: 'localhost',
+    dialect: 'postgres'
+}); 
