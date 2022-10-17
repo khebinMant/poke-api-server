@@ -2,39 +2,39 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('pokemons', {
+    await queryInterface.createTable('stats', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
+      hp: {
+        type: Sequelize.NUMBER
       },
-      evolution: {
-        type: Sequelize.INTEGER
+      attack: {
+        type: Sequelize.NUMBER
       },
-      color: {
-        type: Sequelize.STRING
+      defense: {
+        type: Sequelize.NUMBER
       },
-      description: {
-        type: Sequelize.STRING
+      special_attack: {
+        type: Sequelize.NUMBER
       },
-      is_legendary:{
-        type: Sequelize.BOOLEAN
+      special_defense: {
+        type: Sequelize.NUMBER
       },
-      is_mythical:{
-        type: Sequelize.BOOLEAN
+      speed: {
+        type: Sequelize.NUMBER
       },
-      habitat:{
+      pokemonId:{
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
         references: {
-          model: 'habitats',
+          model: 'pokemons',
           key: 'id',
-          as: 'habitatId',
-        }      
+          as: 'pokemonId',
+        }
       },
       state: {
         type: Sequelize.BOOLEAN
@@ -50,6 +50,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('pokemons');
+    await queryInterface.dropTable('stats');
   }
 };

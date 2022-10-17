@@ -4,11 +4,6 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Ability extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
       this.belongsTo(models.Pokemon,{
         foreignKey:{
@@ -22,9 +17,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Ability.init({
-    name: DataTypes.STRING,
-    description: DataTypes.STRING,
-    pokemonId: DataTypes.INTEGER
+    name: {
+      type:DataTypes.STRING,
+      comment:'Refers to the ability name'
+    },
+    description:{
+      type:DataTypes.STRING,
+      comment:'Refers to the pokmenos description'
+    },
+    state:{
+      type:DataTypes.BOOLEAN,
+      comment:'Helps with the deleted logical'
+    }
   }, {
     sequelize,
     modelName: 'Ability',

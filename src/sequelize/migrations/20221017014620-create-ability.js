@@ -24,6 +24,9 @@ module.exports = {
           as: 'pokemonId',
         }
       },
+      state: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

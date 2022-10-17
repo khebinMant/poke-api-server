@@ -2,33 +2,15 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('images', {
+    await queryInterface.createTable('habitats', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      official_art_work: {
+      name: {
         type: Sequelize.STRING
-      },
-      front_default: {
-        type: Sequelize.STRING
-      },
-      front_female: {
-        type: Sequelize.STRING
-      },
-      front_shiny: {
-        type: Sequelize.STRING
-      },
-      pokemonId:{
-        type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
-        references: {
-          model: 'pokemons',
-          key: 'id',
-          as: 'pokemonId',
-        }
       },
       state: {
         type: Sequelize.BOOLEAN
@@ -44,6 +26,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('images');
+    await queryInterface.dropTable('habitats');
   }
 };

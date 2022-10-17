@@ -20,10 +20,26 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Image.init({
-    official_art_work: DataTypes.STRING,
-    front_default: DataTypes.STRING,
-    front_female: DataTypes.STRING,
-    front_shiny: DataTypes.STRING
+    official_art_work:{
+      type: DataTypes.STRING,
+      comment:'Official art url'
+    },
+    front_default:{
+      type: DataTypes.STRING,
+      comment: 'Front image url'
+    },
+    front_female:{
+      type: DataTypes.STRING,
+      comment:'Front female image url'
+    },
+    front_shiny:{
+      type:DataTypes.STRING,
+      comment: 'Front shiny image url'
+    },
+    state:{
+      type:DataTypes.BOOLEAN,
+      comment:'Helps with the deleted logical'
+    }
   }, {
     sequelize,
     modelName: 'Image',
