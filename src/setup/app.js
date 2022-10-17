@@ -2,27 +2,37 @@ const express =  require('express');
 const app  = express();
 const bodyparser = require('body-parser');
 const cors = require('cors');
-const modelos = require('../sequelize/models')
+const sequelize = require('../sequelize/models')
 
-//middlewars si mis rutas van usar datos que llegan del cliente
-// primero debo poder interpretarlos uso el 
+//middlewars 
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(bodyparser.json());
 app.use(cors({origin:'http://localhost:4200', optionsSuccessStatus:200}));
 
-//Rutas
-app.use(require('../routes/index'));
+//rutas
+app.use('/api/v1/public',require('../routes/index'));
 
-modelos.sequelize.sync().then(() => {
-    console.log('DB en línea...')
-}).catch(err => {
-    console.log(err) 
-})
+const connectDb = async () => {
+    console.log('Checking database connection...');
 
-app.listen(3000);
+    try {
+        // await sequelize.sequelize.sync({force:true}).then(() => {
+        await sequelize.sequelize.sync().then(() => {
+        console.log('DB en línea...')
+        }).catch(err => {
+            console.log(err) 
+        })
+        
+    } catch(e) {
+        console.log('Database connection failed', e);
+        process.exit(1);
+    }
+};
 
 
-
-
-
-
+async function main() {
+    await connectDb();
+    app.listen(3000);
+  }
+  
+main();

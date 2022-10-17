@@ -4,7 +4,7 @@ let api = express.Router(),
 
 pokemon = require('../controllers/pokemon')
 
-api.get('/saludar', pokemon.saludar)
+api.get('/pokemon/:name', pokemon.searchPokemonByName)
 // router.post('/transferenciaCommit', rutas.realizarTransferenciaCommit)
 // router.post('/transferenciaRollBack', rutas.realizarTransferenciaRollBack)
 // router.get('/transferencia',rutas.getLastTransferencia)
