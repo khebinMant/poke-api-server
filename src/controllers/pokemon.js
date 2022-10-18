@@ -48,15 +48,8 @@ const getAllPokemonsPaginated = async (req, res)=>{
   });
 }
 
-const searchPokemonByIdOrName = async (req,res)=>{
-    const {name,id} = req.params
-    const value = null;
-    if (name){
-      value = name
-    }
-    if(id){
-      value = id
-    }
+const searchPokemonByName = async (req,res)=>{
+    const {name} = req.params
     models.Pokemon.findOne({
         where:{
             name
@@ -147,6 +140,7 @@ const searchPokemonById = async (req,res)=>{
 }
 
 module.exports = {
-    searchPokemonByIdOrName,
+    searchPokemonByName,
+    searchPokemonById,
     getAllPokemonsPaginated
 }
