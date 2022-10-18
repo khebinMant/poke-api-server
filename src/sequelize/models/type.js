@@ -6,10 +6,14 @@ module.exports = (sequelize, DataTypes) => {
   class Type extends Model {
 
     static associate(models) {
-      this.belongsToMany(models.Pokemon,{
-        through: "pokemon_type",
-        as: "Type",
-        foreignKey:'typeId'
+      this.hasMany(models.pokemon_type,{
+        foreignKey:{
+          type: DataTypes.INTEGER,
+          name: 'typeId',
+          allowNull: false,
+          unique: false
+        },
+        sourceKey: 'id'
       })
     }
   }

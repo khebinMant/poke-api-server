@@ -14,13 +14,23 @@ module.exports = (sequelize, DataTypes) => {
       this.hasOne(models.Stat,{
         foreignKey:'pokemonId'
       })
-      this.belongsToMany(models.Type,{
-        through: "pokemon_type",
-        as: "Pokemon",
-        foreignKey:'pokemonId'
+      this.hasMany(models.pokemon_type,{
+        foreignKey:{
+          type: DataTypes.INTEGER,
+          name: 'pokemonId',
+          allowNull: false,
+          unique: false
+        },
+        sourceKey:'id'
       })
       this.belongsTo(models.Habitat,{
-        foreignKey:'habitatId'
+        foreignKey:{
+          type: DataTypes.INTEGER,
+          name: 'habitatId',
+          allowNull:false,
+          unique:false
+        },
+        targetKey: 'id'
       })
     }
   }
@@ -48,10 +58,6 @@ module.exports = (sequelize, DataTypes) => {
     is_mythical:{
       type: DataTypes.BOOLEAN,
       comment :'Allows to know if the pokemon is mythical'
-    },
-    habitat:{
-      type: DataTypes.STRING,
-      comment:'Allows to know the pokemons habitat'
     },
     state:{
       type:DataTypes.BOOLEAN,

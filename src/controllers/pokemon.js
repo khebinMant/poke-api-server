@@ -12,57 +12,141 @@ if (config.use_env_variable) {
 let models = require('../sequelize/models');
 let Op = Sequelize.Op;
 
-const searchPokemonByName = async (req,res)=>{
-    const {name} = req.params
-    console.log(name)
-    try {
-      const pokemons = await models.Pokemon.findAll({
-        atributes: ["name", "weight", "height", "hp"],
-      });
-      res.json(pokemons);
-    } catch (error) {
-      res.status(500).json({
-        message: error.message,
-      });
-    }
+const getAllPokemonsPaginated = async (req, res)=>{
+  const {page, size} = req.query
+
+  models.Pokemon.findAndCountAll({
+    limit: size,
+    offset: page * size,
+    include:[
+      {
+        model:models.pokemon_type,
+        required:true,
+        include:{
+          model:models.Type
+        }
+      },
+      {
+        model:models.Image,
+        required: true
+      },
+      {
+        model:models.Ability,
+        required: true
+      },
+      {
+        model:models.Stat,
+        required: true
+      },
+      {
+        model:models.Habitat,
+        required: true
+      }
+    ]
+  }).then(resp=>{
+    res.send(resp)
+  });
 }
 
-// const searchPokemonByName = async (req,res)=>{
-//     const {name} = req.params
-//     console.log(name)
-//     models.Pokemon.findAll({
-//         // attributes:{
-//         //     where:{
-//         //         name:name
-//         //     }
-//         // },
-//         atributes: ["name", "weight", "height", "hp"],
-
-//         // include:[
-//         //     {
-//         //         model:models.Image,
-//         //         required: true
-//         //     },
-//         //     {
-//         //         model:models.Ability,
-//         //         required: true
-//         //     }
-//         // ]
-//     }).then(resp=>{
-//         res.status(200).json({
-//             transaction :true,
-//             data: resp,
-//             msg: resp.length
-//         })
-//     }).catch(err=>{
-//         res.status(500).json({
-//             transaction: false,
-//             data: err,
-//             msg:'Servidor no disponible'
-//         })
-//     })
-// }
+const searchPokemonByIdOrName = async (req,res)=>{
+    const {name,id} = req.params
+    const value = null;
+    if (name){
+      value = name
+    }
+    if(id){
+      value = id
+    }
+    models.Pokemon.findOne({
+        where:{
+            name
+        },
+        include:[
+          {
+            model:models.pokemon_type,
+            required:true,
+            include:{
+              model:models.Type
+            }
+          },
+          {
+            model:models.Image,
+            required: true
+          },
+          {
+            model:models.Ability,
+            required: true
+          },
+          {
+            model:models.Stat,
+            required: true
+          },
+          {
+            model:models.Habitat,
+            required: true
+          }
+        ]
+    }).then(resp=>{
+        res.status(200).json({
+            transaction :true,
+            data: resp,
+            msg: 'Successfully Query!'
+        })
+    }).catch(err=>{
+        res.status(500).json({
+            transaction: false,
+            data: err,
+            msg:'Servidor no disponible'
+        })
+    })
+}
+const searchPokemonById = async (req,res)=>{
+  const {id} = req.params
+  models.Pokemon.findOne({
+      where:{
+        id
+      },
+      include:[
+        {
+          model:models.pokemon_type,
+          required:true,
+          include:{
+            model:models.Type
+          }
+        },
+        {
+          model:models.Image,
+          required: true
+        },
+        {
+          model:models.Ability,
+          required: true
+        },
+        {
+          model:models.Stat,
+          required: true
+        },
+        {
+          model:models.Habitat,
+          required: true
+        }
+      ]
+  }).then(resp=>{
+      res.status(200).json({
+          transaction :true,
+          data: resp,
+          msg: 'Successfully Query!'
+      })
+  }).catch(err=>{
+      res.status(500).json({
+          transaction: false,
+          data: err,
+          msg:'Servidor no disponible'
+      })
+  })
+}
 
 module.exports = {
-    searchPokemonByName
+    searchPokemonByIdOrName,
+    getAllPokemonsPaginated
 }

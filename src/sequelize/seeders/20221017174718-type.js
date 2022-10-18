@@ -6,126 +6,126 @@ module.exports = {
       await queryInterface.bulkInsert('Type', [
         //1
         {
-          name: 'Acero',
+          name: 'acero',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //2
         {
-          name: 'Agua',
+          name: 'agua',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //3
         {
-          name: 'Bicho',
+          name: 'bicho',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //4
         {
-          name: 'Dragón',
+          name: 'dragón',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //5
         {
-          name: 'Eléctrico',
+          name: 'eléctrico',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //6
         {
-          name: 'Fantasma',
+          name: 'fantasma',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //7
         {
-          name: 'Fuego',
+          name: 'fuego',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //8
         {
-          name: 'Hada',
+          name: 'hada',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //9
         {
-          name: 'Hielo',
+          name: 'hielo',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //10
         {
-          name: 'Lucha',
+          name: 'lucha',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //11
         {
-          name: 'Normal',
+          name: 'normal',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //12
         {
-          name: 'Planta',
+          name: 'planta',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //13
         {
-          name: 'Psíquico',
+          name: 'psíquico',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //14
         {
-          name: 'Roca',
+          name: 'roca',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //15
         {
-          name: 'Siniestro',
+          name: 'siniestro',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //16
         {
-          name: 'Tierra',
+          name: 'tierra',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //17
         {
-          name: 'Veneno',
+          name: 'veneno',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         //18
         {
-          name: 'Volador',
+          name: 'volador',
           state: true,
           createdAt: new Date(),
           updatedAt: new Date()
