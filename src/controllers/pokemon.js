@@ -15,9 +15,9 @@ let Op = Sequelize.Op;
 const getAllPokemonsPaginated = async (req, res)=>{
   const {page, size} = req.query
 
-  models.Pokemon.findAndCountAll({
-    limit: size,
-    offset: page * size,
+  models.Pokemon.findAll({
+    // limit: size,
+    // offset: page * size,
     include:[
       {
         model:models.pokemon_type,
@@ -44,8 +44,11 @@ const getAllPokemonsPaginated = async (req, res)=>{
       }
     ]
   }).then(resp=>{
-    res.send(resp)
-  });
+    res.status(200).json({
+      transaction :true,
+      data: resp,
+      msg: 'Successfully Query!'
+  })  });
 }
 
 const searchPokemonByName = async (req,res)=>{

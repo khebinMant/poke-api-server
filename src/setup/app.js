@@ -7,7 +7,7 @@ const sequelize = require('../sequelize/models')
 //middlewars 
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(bodyparser.json());
-app.use(cors({origin:'http://localhost:4200', optionsSuccessStatus:200}));
+app.use(cors({origin:'http://localhost:3000', optionsSuccessStatus:200}));
 
 //rutas
 app.use('/api/v1/public',require('../routes/index'));
@@ -32,7 +32,7 @@ const connectDb = async () => {
 
 async function main() {
     await connectDb();
-    app.listen(3000);
+    app.listen(3005);
   }
   
 main();
