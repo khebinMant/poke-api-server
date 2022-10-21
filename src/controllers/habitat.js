@@ -22,7 +22,14 @@ const getAllHabitats = async (req, res)=>{
       transaction :true,
       data: resp,
       msg: 'Successfully Query!'
-  })  });
+    })
+    }).catch(err=>{
+      res.status(500).json({
+          transaction: false,
+          data: err,
+          msg:'Servidor no disponible'
+      })
+  });
 }
 
 module.exports = {

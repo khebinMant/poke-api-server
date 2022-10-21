@@ -12,7 +12,7 @@ if (config.use_env_variable) {
 let models = require('../sequelize/models');
 let Op = Sequelize.Op;
 
-const getAllPokemonsPaginated = async (req, res)=>{
+const getAllPokemons = async (req, res)=>{
 
   models.Pokemon.findAll({
     order: [
@@ -51,7 +51,14 @@ const getAllPokemonsPaginated = async (req, res)=>{
       transaction :true,
       data: resp,
       msg: 'Successfully Query!'
-  })  });
+  })
+  }).catch(err=>{
+      res.status(500).json({
+          transaction: false,
+          data: err,
+          msg:'Servidor no disponible'
+        })
+    });
 }
 
 const searchPokemonByName = async (req,res)=>{
@@ -150,5 +157,5 @@ const searchPokemonById = async (req,res)=>{
 module.exports = {
     searchPokemonByName,
     searchPokemonById,
-    getAllPokemonsPaginated
+    getAllPokemons
 }

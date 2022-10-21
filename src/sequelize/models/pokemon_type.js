@@ -1,7 +1,34 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const {Model} = require('sequelize');
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Pokemon Type:
+ *       type: object
+ *       properties:
+ *         id: 
+ *           type: int
+ *           example: 1
+ *         state:
+ *           type: boolean
+ *           example: true
+ *         createdAt:
+ *           type: date
+ *           example: 2022-10-21T05:55:42.283Z 
+ *         updatedAt:
+ *           type: date
+ *           example: 2022-10-21T05:55:42.283Z
+ *         pokemonId: 
+ *           type: int
+ *           example: 2  
+ *         typeId: 
+ *           type: int
+ *           example: 5  
+ *         Type:
+ *            type: object
+ *            $ref: "#/components/schemas/Type"
+ */
 module.exports = (sequelize, DataTypes) => {
   class pokemon_type extends Model {
     static associate(models) {

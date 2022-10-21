@@ -1,7 +1,67 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const {Model} = require('sequelize');
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Pokemon:
+ *       type: object
+ *       properties:
+ *         id: 
+ *           type: int
+ *           example: 1
+ *         name: 
+ *           type: string
+ *           example: pikachu  
+ *         evolution:
+ *           type: string
+ *           example: raichu
+ *         color:
+ *           type: string
+ *           example: yellow
+ *         description:
+ *           type: string
+ *           example: Levanta su cola para vigilar los alrededores. A veces, puede ser alcanzado por un rayo en esa pose, Las bolsas de las mejillas están llenas de electricidad, que libera cuando se siente amenazado.
+ *         is_legendary:
+ *           type: boolean
+ *           example: false
+ *         is_mythical: 
+ *           type: boolean
+ *           example: false
+ *         height:
+ *           type: int
+ *           example: 4
+ *         weight:
+ *           type: int
+ *           example: 60
+ *         state:
+ *           type: boolean
+ *           example: true
+ *         createdAt:
+ *           type: date
+ *           example: 2022-10-21T05:55:42.283Z 
+ *         updatedAt:
+ *           type: date
+ *           example: 2022-10-21T05:55:42.283Z
+ *         habitatId:
+ *           type: int
+ *           example: 2
+ *         pokemon_types:
+ *           type: array
+ *           $ref: "#/components/schemas/Pokemon Type"
+ *         Image:
+ *           type: object
+ *           $ref: "#/components/schemas/Image"
+ *         Abilities:
+ *           type: array
+ *           $ref: "#/components/schemas/Ability"
+ *         Stat:
+ *           type: object
+ *           $ref: "#/components/schemas/Stat"
+ *         Habitat:
+ *           type: object
+ *           $ref: "#/components/schemas/Habitat"
+ */
 module.exports = (sequelize, DataTypes) => {
   class Pokemon extends Model {
     static associate(models) {
