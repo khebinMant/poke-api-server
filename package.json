@@ -8,7 +8,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/setup/app.js",
+    "start": "node ./src/setup/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
