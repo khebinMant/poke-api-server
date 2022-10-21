@@ -2,10 +2,20 @@ const express = require('express')
 
 let api = express.Router(),
 
-pokemon = require('../controllers/pokemon')
+pokemonController = require('../controllers/pokemon')
+habitatController = require('../controllers/habitat')
+TypeController = require('../controllers/type')
 
-api.get('/pokemon/:id', pokemon.searchPokemonById)
-api.get('/pokemon-name/:name', pokemon.searchPokemonByName)
-api.get('/pokemons', pokemon.getAllPokemonsPaginated)
+//Pokemons
+api.get('/pokemon/:id', pokemonController.searchPokemonById)
+api.get('/pokemon-name/:name', pokemonController.searchPokemonByName)
+api.get('/pokemons', pokemonController.getAllPokemonsPaginated)
+
+//Habitats
+api.get('/habitats', habitatController.getAllHabitats)
+
+//Type
+api.get('/types', TypeController.getAllTypes)
+
 
 module.exports = api;

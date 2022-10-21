@@ -87,6 +87,104 @@ module.exports = {
           pokemonId:9,
           typeId: 16,
         }, 
+        //bayleef-grass
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:10,
+          typeId: 12,
+        }, 
+        //raichu-electric
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:11,
+          typeId: 5,
+        }, 
+        //charizard-fire
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:12,
+          typeId: 7,
+        }, 
+        //charizard-flying
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:12,
+          typeId: 18,
+        }, 
+        //clefable-fairy
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:13,
+          typeId: 8,
+        },
+        //wartortle-water
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:14,
+          typeId: 2,
+        },
+        //wigglytuff-water
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:15,
+          typeId: 8,
+        },
+        //wigglytuff-water
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:15,
+          typeId: 11,
+        },
+        //golduck-water
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:16,
+          typeId: 2,
+        },
+        //starmie-water
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:17,
+          typeId: 2,
+        },
+        //starmie-psychic
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:17,
+          typeId: 13,
+        },
+        //marowak-ground
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:18,
+          typeId: 16,
+        }, 
+        //meganium-grass
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:19,
+          typeId: 12,
+        },
+        //blastoise-water
+        {
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          pokemonId:20,
+          typeId: 2,
+        }
     ], {});
   },
 

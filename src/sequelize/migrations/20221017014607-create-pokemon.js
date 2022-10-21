@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       evolution: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       color: {
         type: Sequelize.STRING
@@ -35,6 +35,12 @@ module.exports = {
           key: 'id',
           as: 'habitatId',
         }      
+      },
+      height:{
+        type: Sequelize.INTEGER
+      },
+      weight:{
+        type: Sequelize.INTEGER
       },
       state: {
         type: Sequelize.BOOLEAN

@@ -40,8 +40,8 @@ module.exports = (sequelize, DataTypes) => {
       comment:'Defines the data type'
     },
     evolution:{
-      type:DataTypes.INTEGER,
-      comment:'Evolution is a number references to a another pokemonId'
+      type:DataTypes.STRING,
+      comment:'Evolution name references to a another pokemon'
     } ,
     color: {
       type: DataTypes.STRING,
@@ -58,6 +58,14 @@ module.exports = (sequelize, DataTypes) => {
     is_mythical:{
       type: DataTypes.BOOLEAN,
       comment :'Allows to know if the pokemon is mythical'
+    },
+    height:{
+      type: DataTypes.INTEGER,
+      comment:'Defines pokemons height' 
+    },
+    weight:{
+      type: DataTypes.INTEGER,
+      comment:'Defines pokemons weight' 
     },
     state:{
       type:DataTypes.BOOLEAN,

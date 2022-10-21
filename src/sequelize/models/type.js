@@ -25,6 +25,10 @@ module.exports = (sequelize, DataTypes) => {
     state:{
       type:DataTypes.BOOLEAN,
       comment:'Helps with the deleted logical'
+    },
+    url:{
+      type:DataTypes.TEXT,
+      comment:'Image url'
     }
   }, {
     sequelize,

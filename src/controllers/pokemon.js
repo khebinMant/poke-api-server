@@ -13,11 +13,11 @@ let models = require('../sequelize/models');
 let Op = Sequelize.Op;
 
 const getAllPokemonsPaginated = async (req, res)=>{
-  const {page, size} = req.query
 
   models.Pokemon.findAll({
-    // limit: size,
-    // offset: page * size,
+    where:{
+      state:true
+    },
     include:[
       {
         model:models.pokemon_type,
@@ -55,7 +55,8 @@ const searchPokemonByName = async (req,res)=>{
     const {name} = req.params
     models.Pokemon.findOne({
         where:{
-            name
+            name,
+            state:true
         },
         include:[
           {
@@ -100,7 +101,8 @@ const searchPokemonById = async (req,res)=>{
   const {id} = req.params
   models.Pokemon.findOne({
       where:{
-        id
+        id,
+        state:true
       },
       include:[
         {
