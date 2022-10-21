@@ -13,13 +13,13 @@ const options = {
     },
     apis:[
         'src/routes/api/v1/public/index.js',
+        'src/sequelize/models/habitat.js',
         'src/sequelize/models/pokemon.js',
+        'src/sequelize/models/ability.js',
+        'src/sequelize/models/image.js',
+        'src/sequelize/models/stat.js',
         'src/sequelize/models/type.js',
         'src/sequelize/models/pokemon_type.js',
-        'src/sequelize/models/image.js',
-        'src/sequelize/models/ability.js',
-        'src/sequelize/models/stat.js',
-        'src/sequelize/models/habitat.js'
     ]
 
 };
