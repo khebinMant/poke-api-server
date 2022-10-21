@@ -202,7 +202,7 @@ module.exports = {
       //14
       {
         name: 'wartortle',
-        evolution: 'null',
+        evolution: 'blastoise',
         color: 'pink',
         description: 'Se lo considera un símbolo de longevidad. Los ejemplares más ancianos tienen musgo sobre el caparazón.',
         is_legendary: false,
