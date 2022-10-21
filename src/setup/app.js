@@ -7,7 +7,7 @@ const sequelize = require('../sequelize/models')
 //middlewars 
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(bodyparser.json());
-app.use(cors({origin:'http://localhost:3000', optionsSuccessStatus:200}));
+app.use(cors({origin:'https://poke-api-client.herokuapp.com/', optionsSuccessStatus:200}));
 
 //rutas
 app.use('/api/v1/public',require('../routes/index'));
