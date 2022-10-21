@@ -7,17 +7,17 @@ const config = require('../config/config')[env];
 const db = {};
   
 let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.url, config.username, config.password, config);
-}
-
 // if (config.use_env_variable) {
 //   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 // } else {
-//   sequelize = new Sequelize(`${config.url}?sslmode=no-verify`,config);
+//   sequelize = new Sequelize(config.url, config.username, config.password, config);
 // }
+
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+} else {
+  sequelize = new Sequelize(`${config.url}?sslmode=no-verify`,config);
+}
 
 fs
   .readdirSync(__dirname)
