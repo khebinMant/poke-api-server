@@ -28,9 +28,9 @@ const options = {
 const swaggerSpec = swaggerJSDoc(options);
 
 //Function to setup our docs
-const swaggerDocs = (app,port)=>{
-    app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-    app.get('/api/v1/docs.json',(req, res)=>{
+const swaggerDocs = async (app,port)=>{
+    await app.use('/api/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+    await app.get('/api/v1/docs.json',(req, res)=>{
         res.setHeader('Content-type','application/json');
         res.send(swaggerSpec);
     });
