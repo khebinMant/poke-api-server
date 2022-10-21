@@ -32,7 +32,7 @@ const connectDb = async () => {
 
 async function main() {
     await connectDb();
-    app.listen(3005);
+    app.listen(process.env.PORT || 3005);
   }
   
 main();
