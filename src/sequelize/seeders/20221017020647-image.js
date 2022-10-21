@@ -4,7 +4,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
 
-    await queryInterface.bulkInsert('Image', [
+    await queryInterface.bulkInsert('Images', [
       //1 Ditto
       {
         official_art_work: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png',
@@ -230,6 +230,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('Image', null, { truncate: true, cascade: true });
+    return queryInterface.bulkDelete('Images', null, { truncate: true, cascade: true });
   }
 };

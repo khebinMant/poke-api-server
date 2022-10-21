@@ -4,7 +4,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
 
-    await queryInterface.bulkInsert('Ability', [
+    await queryInterface.bulkInsert('Abilities', [
       //Ditto
       {
         name: 'imposter',
@@ -433,6 +433,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('Ability', null, { truncate: true, cascade: true });
+    return queryInterface.bulkDelete('Abilities', null, { truncate: true, cascade: true });
   }
 };

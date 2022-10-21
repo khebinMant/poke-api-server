@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-      await queryInterface.bulkInsert('pokemon_type', [
+      await queryInterface.bulkInsert('pokemon_types', [
         {
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -189,6 +189,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('pokemon_type', null, { truncate: true, cascade: true });
+    return queryInterface.bulkDelete('pokemon_types', null, { truncate: true, cascade: true });
   }
 };

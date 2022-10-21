@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('Pokemon', [
+    return queryInterface.bulkInsert('Pokemons', [
       //1 sin evolucion
       {
         name: 'ditto',
@@ -308,6 +308,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('Pokemon', null, { truncate: true, cascade: true });
+    return queryInterface.bulkDelete('Pokemons', null, { truncate: true, cascade: true });
   }
 };

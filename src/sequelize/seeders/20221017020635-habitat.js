@@ -4,7 +4,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
 
-    await queryInterface.bulkInsert('Habitat', [
+    await queryInterface.bulkInsert('Habitats', [
       //1
       {
         name: 'cueva',
@@ -82,6 +82,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('Habitat', null, { truncate: true, cascade: true });
+    return queryInterface.bulkDelete('Habitats', null, { truncate: true, cascade: true });
   }
 };

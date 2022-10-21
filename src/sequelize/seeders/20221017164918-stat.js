@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-      await queryInterface.bulkInsert('Stat', [
+      await queryInterface.bulkInsert('Stats', [
         //1 Ditto
         {
           hp: 48,
@@ -268,6 +268,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('Stat', null, { truncate: true, cascade: true });
+    return queryInterface.bulkDelete('Stats', null, { truncate: true, cascade: true });
   }
 };
