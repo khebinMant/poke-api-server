@@ -15,6 +15,9 @@ let Op = Sequelize.Op;
 const getAllPokemonsPaginated = async (req, res)=>{
 
   models.Pokemon.findAll({
+    order: [
+      [Sequelize.literal('RANDOM()')]
+    ],
     where:{
       state:true
     },

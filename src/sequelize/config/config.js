@@ -1,7 +1,3 @@
-//         username: process.env.USER_DB || 'postgres',
-//         password: process.env.PASS_DB || '12345678',
-//         database: process.env.NAME_DB || 'pokemon_db',
-//         host: process.env.HOST_DB || 'localhost',
 module.exports = {
     development: {
         // username: process.env.USER_DB || 'zlhhhkuakbmmkz ',
