@@ -1,7 +1,7 @@
 # COMO EJECUTAR LA APLICACIÓN poke-api-server (back-end)
 
 
-## Scrips disponibles
+## Scripts disponibles
 
 Para poder hacer funcionar localmente este proyecto se requiere los siguientes comandos
 
