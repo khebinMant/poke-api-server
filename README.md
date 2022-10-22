@@ -1,4 +1,4 @@
-# Aplicación de poke-api del lado del servidor
+# COMO EJECUTAR LA APLICACIÓN poke-api-server (back-end)
 
 
 ## Scrips disponibles
