@@ -31,3 +31,13 @@ esto confirma el arranque del servidor.
 La documentación del API  se puede visualizar una vez arracando el servidor en el siguiente enlace
 
 >http://localhost:3005/api/v1/docs/#/
+
+### `Características`
+
+#### Base de datos POSTGRESQL alojada en Heroku
+#### Manejo de consultas, creación de tablas, migraciones y semillero con datos usando el ORM sequelize
+#### Servidor realizado usando javascript del lado del servido (node.js) y libreria express.
+#### Control de rutas y controladores para cada modelo.
+#### End point y middlewars
+#### Documentación escrita utilizando Swagger
+
